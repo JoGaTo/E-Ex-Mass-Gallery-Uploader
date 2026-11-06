@@ -1,0 +1,19 @@
+# Local uploader state
+/cookies.txt
+/eh_uploader_config.json
+/eh_uploader_queue.json
+/eh_uploader_cache.json
+/eh_gallery_*_response.html
+/eh_gallery_draft_page.html
+*.log
+*.tmp
+.env
+.env.*
+
+# Build output and distribution archives
+/_internal/
+/build/
+/dist/
+*.exe
+*.rar
+__pycache__/
