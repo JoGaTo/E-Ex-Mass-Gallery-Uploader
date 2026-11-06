@@ -1,0 +1,30 @@
+name: Windows Python check
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ex_gallery_uploader_2r.py
+      - .github/workflows/windows-python-check.yml
+  pull_request:
+    branches: [main]
+    paths:
+      - ex_gallery_uploader_2r.py
+      - .github/workflows/windows-python-check.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  syntax-check:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.14'
+      - name: Check uploader syntax
+        run: python -m py_compile ex_gallery_uploader_2r.py
